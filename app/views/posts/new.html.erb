@@ -1,0 +1,13 @@
+<form action="<%= posts_path %>" method="POST">
+<%= form_tag posts_path do %>
+  <label>Post title:</label><br>
+  <%= text_field_tag :'post[title]' %><br>
+
+  <label>Post description:</label><br>
+  <%= text_field_tag :'post[description]' %>
+
+  <input type="hidden" name="authenticity_token" value='<%=form_authenticity_token %>'>
+  <input type="submit" value="Submit Post">
+<% end %>
+
+  <%= params.inspect %>
